@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Money Oracle | Dashboard</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="../../assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../assets/bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../../assets/bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../assets/dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../../assets/dist/css/skins/_all-skins.min.css">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="../../assets/bower_components/morris.js/morris.css">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="../../assets/bower_components/jvectormap/jquery-jvectormap.css">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="../../assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="../../assets/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="../../assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="../auth/dashboard.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>M </b>O</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Money</b> Oracle</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="../../assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="../../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  
+                  <small>Member since Nov. 2018</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                   <a href="../auth/logout.html" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+         <!--  <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="../../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p></p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <!-- search form -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">MAIN NAVIGATION</li>
+       <li class="">
+          <a href="../auth/dashboard.html">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span> 
+          </a>
+        </li>
+         
+		<li class="treeview">
+		<a href="#">
+            <i class="fa fa-fw fa-user"></i><span>Organisation</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../auth/index.html"><i class="fa fa-circle-o"></i>Users</a></li>
+            <li><a href="../auth/create_user.html"><i class="fa fa-circle-o"></i> Add User</a></li>
+			<li><a href="../auth/organisation.html"><i class="fa fa-circle-o"></i>Organisation List</a></li>
+			<li><a href="../auth/add_organisation.html"><i class="fa fa-circle-o"></i>Add Organisation</a></li>  </ul>
+        </li>
+		  
+        <li class="treeview active">
+          <a href="#">
+            <i class="fa fa-exchange"></i><span>Transactions</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+		  <ul class="treeview-menu">
+            <li><a href="../transactions/index.html"><i class="fa fa-circle-o"></i>Transaction List</a></li>
+            <li><a href="../transactions/add_transaction.html"><i class="fa fa-circle-o"></i> Add Transaction</a></li>
+          </ul>
+        </li>
+		<li class="dashboard">
+			<a href="../hypothesies/index.html">
+			   <i class="fa fa-clone"></i> <span>Hypothesies</span> 
+			</a>
+		</li>
+		<li class="treeview ">
+          <a href="#">
+            <i class="fa fa-bullseye"></i><span>Goals</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+		  <ul class="treeview-menu">
+		    <li><a href="../goal/goal.html"><i class="fa fa-circle-o"></i>Goal List</a></li>
+            <li><a href="../goal/add_goal.html"><i class="fa fa-circle-o"></i>Add Goal</a></li>
+          </ul>
+        </li>
+		<li class="treeview ">
+          <a href="#">
+            <i class="fa fa-bank"></i><span>Bank Accounts</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+         <ul class="treeview-menu">
+		    <li><a href="../banks/list_banks.html"><i class="fa fa-circle-o"></i>Bank List</a></li>
+            <li><a href="../banks/create_bank.html"><i class="fa fa-circle-o"></i>Add Bank</a></li>
+          </ul>
+        </li>
+		<li class="dashboard">
+          <a href="../auth/setting.html">
+            <i class="fa fa-cog"></i> <span>Setting</span> 
+          </a>
+        </li>
+		
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+   <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Add Transaction 
+        <small>New</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="../auth/dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="../transactions/index.html">Transactions</a></li>
+        <li class="active">New</li>
+      </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Transaction Details</h3>
+            </div>
+            <!-- /.box-header -->
+			 
+            <!-- form start -->
+           <form method="post ">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="transaction_name">Name</label>
+                  <input type="text" class="form-control" id="transaction_name" placeholder="Transaction Name" name="transaction_name" >
+				    </div>
+				<div class="form-group">
+                  <label for="first_date">First Date</label>
+                  <input type="text" class="form-control" id="datepicker" placeholder="First date" name="first_date" >
+				</div>
+				<div class="form-group">
+                  <label for="intervall">Intervall</label>&nbsp;&nbsp;&nbsp;
+				  <label for="every_day">Every</label>&nbsp;&nbsp;
+                  <input type="text" id="every_day" placeholder="Day" name="every_day" >&nbsp;&nbsp;
+				  <select name="every_month" style="padding:2px;" id="interval">
+				  <option value="">Select Intervall</option>
+				  <option value="day">Days</option>
+				  <option value="week">Weeks</option>
+				  <option value="months">Months</option>
+				  <option value="year">Years</option>
+				  </select>
+				</div>
+				<div class="form-group">
+                  <label for="until">Until</label>
+                  <input type="text" class="form-control" id="until" readonly placeholder="Until" name="until" >
+			    </div>
+				<div class="form-group">
+                  <label for="amount">Amount</label>
+                  <input type="text" class="form-control" id="amount" placeholder="Amount" name="amount" >
+                </div>
+				<div class="form-group">
+                  <label for="Towards">Towards</label>
+                  <select name="towards"  class="form-control" id="towards">
+				   <option value="">Select Towards</option>
+				   <option value="1">Electricity  Bill</option>
+				  </select>
+				</div>
+				<div class="form-group">
+                  <label for="bank">Account</label>
+                  <select name="bank"  class="form-control" id="bank">
+				   <option value="">Select Account</option>
+				   <option value="1">Amercian bank</option>
+				  </select>
+				</div>
+				<div class="form-group">
+                  <label for="bank">Flags</label>
+                  &nbsp;&nbsp;&nbsp; 
+				  <input type="checkbox" name="flags[]" value="1"/>&nbsp;VAT &nbsp;&nbsp;&nbsp; 
+				  <input type="checkbox" name="flags[]" value="2"/>&nbsp;VAT -PAY
+                </div>
+			   <div class="box-footer">
+                <input type="button" name="submit" value="Add Transaction" id="submit" class="btn btn-primary">
+              </div>
+            </form>
+          </div>
+          <!-- /.box -->
+        </div>
+        <!--/.col (left) -->
+       
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+    <!--   <b>Version</b> 2.4.0 -->
+    </div>
+    <strong>Copyright &copy; 2014-2018 <a href=""></a>.</strong> All rights
+    reserved.
+  </footer>
+
+   
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+
+<!-- ./wrapper -->
+<!-- jQuery 3 -->
+<script src="../../assets/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../../assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../../assets/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../assets/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../assets/dist/js/demo.js"></script>
+<link rel="stylesheet" href="../../assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+<script src="../../assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+<script>
+// Datepicker
+ $('#datepicker').datepicker({
+      autoclose: true
+    });
+	
+//iban 10 digits only 
+  $("#amount, #every_day").keydown(function(event) {
+  k = event.which;
+  if ((k >= 96 && k <= 105) || k == 8) {
+    if ($(this).val().length == 10) {
+      if (k == 8) {
+        return true;
+      } else {
+        event.preventDefault();
+        return false;
+
+      }
+    }
+  } else {
+    event.preventDefault();
+    return false;
+  }
+});
+
+$('#interval').on('change',function(){
+	var interval=$('#interval option:selected').val();
+	var every_interval_value=$('#every_day').val();
+	var first_date_value= $('#datepicker').val();
+	var path="transaction/ajax_modify_date";
+	$.ajax({
+		url: path,
+		cache: false,
+		type: "POST",
+		data: {interval:interval,every_interval_value:every_interval_value,first_date_value:first_date_value},
+		dataType: "text",
+		success: function(response){
+			$('#until').val(response);
+		}
+	});
+});
+
+$('#submit').on('click',function(){
+	var goal=$('#towards option:selected').val();
+	var bank=$('#bank option:selected').val();
+		if(goal=='') {
+			alert("Please Select any Towards or Add goal");
+			return false;
+		}
+		if(bank==''){
+			alert("Please Select any bank or Add bank");
+			return false;
+		}
+		var transaction_name=$("input[name='transaction_name']").val();
+		var first_date=$("input[name='first_date']").val();
+		var every_day=$("input[name='every_day']").val();
+		var interval=$("#interval option:selected").val();
+		var until=$("input[name='until']").val();
+		var amount=$("input[name='amount']").val();
+		var towards=$("#towards option:selected").val();
+		var bank=$("#bank option:selected").val();
+		var flags=$("input[name='flags[]']").val();
+		var eventsholded = [];
+		var event = new Object();
+		event.transaction_name = transaction_name
+		event.first_date = first_date
+		event.every_day = every_day
+		event.interval = interval
+		event.until = until
+		event.amount = amount
+		event.towards = towards
+		event.bank = bank
+		event.flags = flags
+		eventsholded.push(event);
+		console.log(eventsholded);
+		$.ajax({ 
+			dataType: "json",
+			type: 'POST',
+			contentType: 'application/json; charset=utf-8',
+			data: JSON.stringify(eventsholded),
+			url: "../JSON_database/register.json",
+			success: function(data){
+				alert('done');        
+			}, failure: function() {	alert("Error!");}
+		});
+	});
+
+</script>
+</body>
+</html>
